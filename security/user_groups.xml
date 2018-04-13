@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data noupdate="0">
+
+	<record model="ir.module.category" id="module_management">
+	  <field name="name">Meat Invetory module access</field>
+	  <field name="description">User access level for this module</field>
+	  <field name="sequence">3</field>
+	</record>
+
+   <record id="group_user" model="res.groups">
+     <field name="name">User</field>
+     <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+     <field name="category_id" ref="meat_inventory.module_management"/>
+    </record>
+
+    <record id="group_manager" model="res.groups">
+      <field name="name">Manager</field>
+      <field name="implied_ids" eval="[(4, ref('meat_inventory.group_user'))]"/>
+      <field name="category_id" ref="meat_inventory.module_management"/>
+    </record>
+<!-- 
+		<record model="ir.rule" id="meat_inventory_user_rule">
+			<field name="name">Coupan Sales module</field>
+			<field name="model_id" ref="model_meat_inventory"/>
+			<field name="groups" eval="[(4, ref('base.group_user'))]"/>
+			<field name="domain_force">
+			[('stages', 'in', ['draft','requested','delivered','cancel']),('branch_user','=',user.id)]</field>
+		</record>
+
+
+		<record model="ir.rule" id="meat_inventory_all_rule">
+			<field name="name">Coupan Sales module All</field>
+			<field name="model_id" ref="model_meat_inventory"/>
+			<field name="groups" eval="[(4, ref('base.group_system'))]"/>
+			<field name="domain_force">[('stages', 'in', ['draft','requested','process','delivered','recieved','cancel'])]</field>
+		</record> -->
+  </data>
+</odoo>

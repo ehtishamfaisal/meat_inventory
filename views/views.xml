@@ -1,0 +1,104 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+            <!--========================[Form View-START]=====================-->
+ 
+                <record id="meat_inventory_form" model="ir.ui.view">
+                    <field name="name">meat_inventory form</field>
+                    <field name="model">meat_inventory</field>
+                    <field name="type">form</field>
+                    <field name="arch" type="xml">
+                        <form>
+                            <header>
+                              <button name="btn_update" type="object" string="Get Products" />
+                              <button name="btn_process" type="object" string="Proceed" attrs="{'invisible':[('stages','!=','requested')]}"/>
+                              <button name="btn_delivered" type="object" string="Proceed" attrs="{'invisible':[('stages','!=','process')]}"/>
+                              <button name="btn_recieved" type="object" string="Proceed" attrs="{'invisible':[('stages','!=','delivered')]}"/>
+                              <!-- <button name="btn_requested" type="object" string="Proceed" ttrs="{'invisible':[('stages','!=','recieved')]}"/> -->
+                                <field name="stages" widget="statusbar" />
+                            </header>
+                            <sheet>
+                                <group>
+                                    <group>
+                                      <field name="name" />
+
+                                    </group>
+                                    <group>
+                                      <field name="branch_user" groups="meat_inventory.group_manager"/>
+                                      <field name="order_date" readonly="1"/>
+
+                                    </group>
+                                </group>
+
+                                <field name="order_line_ids" nolabel='1' >
+                                <tree editable="bottom" >                                   
+                                    <field name="product"  />
+                                    <field name="uom" />
+                                    <field name="remaining_qty" />
+                                    <field name="request_qty" />
+                                    <field name="capacity"  groups="meat_inventory.group_manager"/>
+
+                                </tree>
+
+                            </field>
+                            </sheet>
+                        </form>
+                    </field>
+                </record>
+
+            <!--************************[Form View-ENDS]**********************-->
+
+
+    
+    <record model="ir.ui.view" id="meat_inventory.list">
+      <field name="name">meat_inventory list</field>
+      <field name="model">meat_inventory</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="branch_user"/>
+          <field name="stages"/>
+        </tree>
+      </field>
+    </record>
+    
+
+    <!-- actions opening views on models -->
+    
+    <record model="ir.actions.act_window" id="meat_inventory.action_window">
+      <field name="name">Orders</field>
+      <field name="res_model">meat_inventory</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+
+    
+    <record model="ir.actions.act_window" id="request_orders_action_window">
+      <field name="name">Orders</field>
+      <field name="res_model">meat_inventory</field>
+      <field name="domain">[('stages','=','requested')]</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+
+    <!-- Top menu item -->
+    
+    <menuitem name="Meat" id="meat_inventory.menu_root"/>
+    
+    <!-- menu categories -->
+    
+    <menuitem name="Meat Orders" id="meat_inventory.menu_1" parent="meat_inventory.menu_root"/>
+    <menuitem name="Requested Orders" id="meat_inventory.menu_2" parent="meat_inventory.menu_root"/>
+    
+    <!-- actions -->
+    
+    <menuitem name="Orders" id="meat_inventory.menu_1_list" parent="meat_inventory.menu_1"
+              action="meat_inventory.action_window"/>
+
+    <menuitem name="Requested Orders" id="meat_inventory.menu_2_list" parent="meat_inventory.menu_2"
+              action="request_orders_action_window"/>
+  
+    
+  </data>
+</odoo>

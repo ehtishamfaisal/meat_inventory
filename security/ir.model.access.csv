@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+coupan_book_tree_admin, Model admin access,meat_inventory.model_meat_inventory_tree,meat_inventory.group_manager,1,1,1,1
+coupan_book_tree_user, Model user access,meat_inventory.model_meat_inventory_tree,meat_inventory.group_user,1,1,1,0
+coupan_multi_books_admin, Model admin access,meat_inventory.model_meat_inventory_tree_config,meat_inventory.group_manager,1,1,1,1
+coupan_multi_books_user, Model user access,meat_inventory.model_meat_inventory_tree_config,meat_inventory.group_user,1,1,1,0
+coupan_book_maintain_admin, Model admin access,meat_inventory.model_meat_inventory,meat_inventory.group_manager,1,1,1,1
+coupan_book_maintain_user, Model user access,meat_inventory.model_meat_inventory,meat_inventory.group_user,1,1,1,0

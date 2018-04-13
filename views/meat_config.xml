@@ -1,0 +1,34 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    
+    <record model="ir.ui.view" id="meat_inventory_tree_config_list">
+      <field name="name">meat_inventory_tree_config</field>
+      <field name="model">meat_inventory_tree_config</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+          <field name="product"/>
+          <field name="uom"/>
+        </tree>
+      </field>
+    </record>
+    
+
+    <!-- actions opening views on models -->
+    
+    <record model="ir.actions.act_window" id="meat_inventory_tree_config_list_action_window">
+      <field name="name">Config</field>
+      <field name="res_model">meat_inventory_tree_config</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+
+
+    <menuitem name="Configuration" id="meat_inventory.menu_3" parent="meat_inventory.menu_root"/>
+    
+    <menuitem name="Config Products" id="meat_inventory.menu_3_list" parent="meat_inventory.menu_3"
+              action="meat_inventory_tree_config_list_action_window"/>
+  
+    
+  </data>
+</odoo>

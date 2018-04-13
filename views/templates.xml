@@ -1,0 +1,113 @@
+<odoo>
+    <data>
+
+        <!-- Start Sequence For Maandog -->
+<!--           <record model="ir.sequence.type" id="maandog_seq_type">
+            <field name="name">maandog Type</field>
+            <field name="code">maandog.seq</field>
+          </record> -->
+
+
+          <record model="ir.sequence" id="maandog_sequence">
+            <field name="name">maandog</field>
+            <field name="code">maandog.seq</field>
+            <field name="prefix">MAN</field>
+            <field name="padding">4</field>
+          </record>
+        <!-- End Sequence For Maandog -->
+
+        <!-- Start Sequence For Dinsdag -->
+<!--           <record model="ir.sequence.type" id="dinsdag_seq_type">
+            <field name="name">dinsdag Type</field>
+            <field name="code">dinsdag.seq</field>
+          </record> -->
+
+
+          <record model="ir.sequence" id="dinsdag_sequence">
+            <field name="name">dinsdag</field>
+            <field name="code">dinsdag.seq</field>
+            <field name="prefix">DIN</field>
+            <field name="padding">4</field>
+          </record>
+        <!-- End Sequence For Dinsdag -->
+
+        <!-- Start Sequence For Woensdag -->
+<!--           <record model="ir.sequence.type" id="woensdag_seq_type">
+            <field name="name">woensdag Type</field>
+            <field name="code">woensdag.seq</field>
+          </record> -->
+
+
+          <record model="ir.sequence" id="woensdag_sequence">
+            <field name="name">woensdag</field>
+            <field name="code">woensdag.seq</field>
+            <field name="prefix">WOE</field>
+            <field name="padding">4</field>
+          </record>
+        <!-- End Sequence For Woensdag -->
+
+        <!-- Start Sequence For Donderdag -->
+
+<!--           <record model="ir.sequence.type" id="donderdag_seq_type">
+            <field name="name">donderdag Type</field>
+            <field name="code">donderdag.seq</field>
+          </record>
+ -->
+
+          <record model="ir.sequence" id="donderdag_sequence">
+            <field name="name">donderdag</field>
+            <field name="code">donderdag.seq</field>
+            <field name="prefix">DON</field>
+            <field name="padding">4</field>
+          </record>
+        <!-- End Sequence For Donderdag -->
+
+        <!-- Start Sequence For Vrijdag -->
+<!--           <record model="ir.sequence.type" id="vrijdag_seq_type">
+            <field name="name">vrijdag Type</field>
+            <field name="code">vrijdag.seq</field>
+          </record>
+ -->
+
+          <record model="ir.sequence" id="vrijdag_sequence">
+            <field name="name">vrijdag</field>
+            <field name="code">vrijdag.seq</field>
+            <field name="prefix">VRI</field>
+            <field name="padding">4</field>
+          </record>
+        <!-- End Sequence For Vrijdag -->
+
+        <!-- Start Sequence For Zaterdag -->
+<!--           <record model="ir.sequence.type" id="zaterdag_seq_type">
+            <field name="name">zaterdag Type</field>
+            <field name="code">zaterdag.seq</field>
+          </record>
+
+ -->
+          <record model="ir.sequence" id="zaterdag_sequence">
+            <field name="name">zaterdag</field>
+            <field name="code">zaterdag.seq</field>
+            <field name="prefix">ZAT</field>
+            <field name="padding">4</field>
+          </record>
+        <!-- End Sequence For Zaterdag -->
+
+        <!-- Start Sequence For Zondag -->
+<!--           <record model="ir.sequence.type" id="zondag_seq_type">
+            <field name="name">zondag Type</field>
+            <field name="code">zondag.seq</field>
+          </record>
+ -->
+
+          <record model="ir.sequence" id="zondag_sequence">
+            <field name="name">zondag</field>
+            <field name="code">zondag.seq</field>
+            <field name="prefix">ZON</field>
+            <field name="padding">4</field>
+          </record>
+
+        <!-- Start Sequence For Zondag -->
+
+
+    </data>
+</odoo>
